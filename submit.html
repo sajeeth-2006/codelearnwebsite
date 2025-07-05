@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Submit Solution</title>
+  <style>
+    body {
+      font-family: serif;
+      background-color: #fdf6e3;
+      padding: 20px;
+    }
+    h1 {
+      color: #4b3f72;
+    }
+    label, textarea {
+      display: block;
+      margin-bottom: 10px;
+    }
+    textarea {
+      width: 100%;
+      height: 150px;
+    }
+    input[type="submit"] {
+      background-color: #4b3f72;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Submit Your Code</h1>
+
+  <form method="post" action="#">
+    <label>Task ID:
+      <input type="text" name="task_id" value="" id="taskInput" readonly />
+    </label>
+
+    <label>Your Name:
+      <input type="text" name="student_name" required />
+    </label>
+
+    <label>Your Code:</label>
+    <textarea name="code" required></textarea>
+
+    <input type="submit" value="Submit Solution" />
+  </form>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const taskId = urlParams.get('task');
+    document.getElementById('taskInput').value = taskId || '';
+  </script>
+
+</body>
+</html>

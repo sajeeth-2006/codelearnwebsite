@@ -2,32 +2,92 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>C++ Intermediate Tasks</title>
+  <title>C++ Tasks</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <button id="toggle-dark" style="position: fixed; top: 1rem; right: 1rem;">🌙 Toggle Dark Mode</button>
-  <h1>C++ Intermediate Tasks</h1>
+
+  <h1>C++ Programming Tasks</h1>
 
   <nav>
     <a href="index.html">Home</a>
-    <a href="cpp.html">C++ (Beginner)</a>
+    <a href="cpp.html">C++</a>
     <a href="cpp_intermediate.html">C++ (Intermediate)</a>
   </nav>
 
-  <div class="task"><div class="task-title">Task 1: Prime Range</div><p>Print all prime numbers between two given numbers.</p><a class="submit-btn" href="#">Submit</a></div>
-  <div class="task"><div class="task-title">Task 2: Armstrong Number</div><p>Check if a number is an Armstrong number (e.g., 153).</p><a class="submit-btn" href="#">Submit</a></div>
-  <div class="task"><div class="task-title">Task 3: Class and Object</div><p>Create a simple class with 2 attributes and a method to display them.</p><a class="submit-btn" href="#">Submit</a></div>
-  <div class="task"><div class="task-title">Task 4: Sum of Digits</div><p>Calculate the sum of digits of a number using a loop.</p><a class="submit-btn" href="#">Submit</a></div>
-  <div class="task"><div class="task-title">Task 5: Factorial using Recursion</div><p>Write a recursive function to calculate factorial of a number.</p><a class="submit-btn" href="#">Submit</a></div>
+  <!-- Tasks -->
+  <div class="task">
+    <div class="task-title">Task 1: Hello World</div>
+    <p>Write a C++ program to print "Hello, World!".</p>
+    <button class="submit-btn" onclick="openForm('Task 1: Hello World')">Submit</button>
+  </div>
 
+  <div class="task">
+    <div class="task-title">Task 2: Swap Two Numbers</div>
+    <p>Swap values of two variables using a temporary variable.</p>
+    <button class="submit-btn" onclick="openForm('Task 2: Swap Two Numbers')">Submit</button>
+  </div>
+
+  <div class="task">
+    <div class="task-title">Task 3: Simple Calculator</div>
+    <p>Create a simple calculator using switch case.</p>
+    <button class="submit-btn" onclick="openForm('Task 3: Simple Calculator')">Submit</button>
+  </div>
+
+  <div class="task">
+    <div class="task-title">Task 4: Factorial</div>
+    <p>Calculate factorial using a loop.</p>
+    <button class="submit-btn" onclick="openForm('Task 4: Factorial')">Submit</button>
+  </div>
+
+  <div class="task">
+    <div class="task-title">Task 5: Check Prime</div>
+    <p>Check whether a number is prime or not.</p>
+    <button class="submit-btn" onclick="openForm('Task 5: Check Prime')">Submit</button>
+  </div>
+
+  <!-- Submit Form -->
+  <div id="submit-form" style="display: none; padding: 1rem; background: #eee; border-radius: 8px; margin-top: 1rem;">
+    <h3>Submit Your Answer</h3>
+    <label>Name:<br><input type="text" id="student-name" placeholder="Your name" /></label><br><br>
+    <label>Paste Code:<br><textarea id="student-code" rows="6" cols="50" placeholder="Your code here..."></textarea></label><br><br>
+    <button onclick="submitTask()">Submit</button>
+    <button onclick="closeForm()">Cancel</button>
+  </div>
+
+  <!-- JavaScript -->
   <script>
     const toggle = document.getElementById('toggle-dark');
     toggle.addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
     });
+
+    function openForm(taskTitle) {
+      document.getElementById('submit-form').style.display = 'block';
+      document.getElementById('submit-form').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function closeForm() {
+      document.getElementById('submit-form').style.display = 'none';
+    }
+
+    function submitTask() {
+      const name = document.getElementById('student-name').value.trim();
+      const code = document.getElementById('student-code').value.trim();
+
+      if (!name || !code) {
+        alert("Please fill in both name and code.");
+        return;
+      }
+
+      alert(`Thank you, ${name}! Your answer was submitted.`);
+      document.getElementById('submit-form').style.display = 'none';
+      document.getElementById('student-name').value = '';
+      document.getElementById('student-code').value = '';
+    }
   </script>
 
 </body>

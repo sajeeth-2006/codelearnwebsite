@@ -2,53 +2,51 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Python Tasks</title>
+  <title>Python Intermediate Tasks</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Dark Mode Toggle -->
   <button id="toggle-dark" style="position: fixed; top: 1rem; right: 1rem;">🌙 Toggle Dark Mode</button>
 
-  <h1>Python Programming Tasks</h1>
+  <h1>Python Intermediate Tasks</h1>
 
-  <!-- Navigation -->
   <nav>
     <a href="index.html">Home</a>
-    <a href="python.html">Python</a>
+    <a href="python.html">Python (Beginner)</a>
     <a href="python_intermediate.html">Python (Intermediate)</a>
   </nav>
 
-  <!-- Tasks List -->
+  <!-- Tasks -->
   <div class="task">
-    <div class="task-title">Task 1: Hello World</div>
-    <p>Write a Python program to print "Hello, World!"</p>
-    <button class="submit-btn" onclick="openForm('Task 1: Hello World')">Submit</button>
+    <div class="task-title">Task 1: Palindrome Checker</div>
+    <p>Write a function that checks if a given string is a palindrome.</p>
+    <button class="submit-btn" onclick="openForm('Task 1: Palindrome Checker')">Submit</button>
   </div>
 
   <div class="task">
-    <div class="task-title">Task 2: Add Two Numbers</div>
-    <p>Take two numbers from the user and print their sum.</p>
-    <button class="submit-btn" onclick="openForm('Task 2: Add Two Numbers')">Submit</button>
+    <div class="task-title">Task 2: File Word Count</div>
+    <p>Read a text file and count the number of words in it.</p>
+    <button class="submit-btn" onclick="openForm('Task 2: File Word Count')">Submit</button>
   </div>
 
   <div class="task">
-    <div class="task-title">Task 3: Even or Odd</div>
-    <p>Check if a number is even or odd.</p>
-    <button class="submit-btn" onclick="openForm('Task 3: Even or Odd')">Submit</button>
+    <div class="task-title">Task 3: Multiplication Table (Function)</div>
+    <p>Create a function that prints the multiplication table for a given number.</p>
+    <button class="submit-btn" onclick="openForm('Task 3: Multiplication Table')">Submit</button>
   </div>
 
   <div class="task">
-    <div class="task-title">Task 4: Factorial</div>
-    <p>Calculate the factorial of a given number.</p>
-    <button class="submit-btn" onclick="openForm('Task 4: Factorial')">Submit</button>
+    <div class="task-title">Task 4: Dictionary Sorting</div>
+    <p>Sort a dictionary by its values in ascending order.</p>
+    <button class="submit-btn" onclick="openForm('Task 4: Dictionary Sorting')">Submit</button>
   </div>
 
   <div class="task">
-    <div class="task-title">Task 5: Prime Number</div>
-    <p>Check if a number is prime or not.</p>
-    <button class="submit-btn" onclick="openForm('Task 5: Prime Number')">Submit</button>
+    <div class="task-title">Task 5: Fibonacci with Recursion</div>
+    <p>Write a recursive function to print the Fibonacci series up to n terms.</p>
+    <button class="submit-btn" onclick="openForm('Task 5: Fibonacci with Recursion')">Submit</button>
   </div>
 
   <!-- Submit Form -->
@@ -87,7 +85,6 @@
 
       alert(`Thank you, ${name}! Your answer was submitted.`);
 
-      // Reset and hide form
       document.getElementById('submit-form').style.display = 'none';
       document.getElementById('student-name').value = '';
       document.getElementById('student-code').value = '';

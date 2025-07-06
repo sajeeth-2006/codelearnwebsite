@@ -1,78 +1,75 @@
-/* Base styles */
+/* Royal color palette */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
-  color: #222;
-  margin: 2rem;
+  background: #1b1b2f; /* dark royal blue */
+  color: #f5e1a4; /* soft gold */
+  font-family: 'Merriweather', serif;
+  margin: 0;
+  padding: 20px;
 }
 
-nav {
-  margin-bottom: 1rem;
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  color: #ffd700; /* gold */
+  text-shadow: 1px 1px 3px rgba(255,215,0,0.7);
 }
 
 nav a {
-  margin-right: 1rem;
+  color: #f5e1a4;
   text-decoration: none;
-  color: #0366d6;
-  font-weight: bold;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-.task {
-  background: white;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 6px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-}
-
-.task-title {
-  font-size: 1.2rem;
+  margin: 0 15px;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+nav a:hover {
+  color: #ffd700;
+  text-shadow: 0 0 5px #ffd700;
 }
 
-.submit-btn {
-  display: inline-block;
-  background-color: #0366d6;
-  color: white;
-  padding: 0.4rem 1rem;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: bold;
+button {
+  background-color: #4b2e83; /* royal purple */
+  color: #f5e1a4;
+  border: 2px solid #ffd700;
+  padding: 10px 20px;
+  font-size: 1rem;
   cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.submit-btn:hover {
-  background-color: #024f9b;
+button:hover {
+  background-color: #ffd700;
+  color: #4b2e83;
+  box-shadow: 0 0 10px #ffd700;
 }
 
-/* Dark mode styles */
-.dark-mode {
-  background-color: #121212;
-  color: #ffffff;
+/* Card style for tasks */
+.task {
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid #ffd700;
+  border-radius: 10px;
+  margin: 20px 0;
+  padding: 15px 20px;
+  box-shadow: 0 4px 8px rgba(255,215,0,0.2);
 }
 
-.dark-mode nav a {
-  color: #9ecfff;
+/* Dark mode override */
+body.dark-mode {
+  background: #100f1f;
+  color: #fff8dc;
 }
 
-.dark-mode nav a:hover {
-  text-decoration: underline;
+body.dark-mode nav a {
+  color: #fff8dc;
 }
 
-.dark-mode .task {
-  background-color: #1c1c1c;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+body.dark-mode button {
+  background-color: #3a2166;
+  border-color: #e6c200;
+  color: #fff8dc;
 }
 
-.dark-mode .submit-btn {
-  background-color: #575fcf;
-}
-
-.dark-mode .submit-btn:hover {
-  background-color: #403ecc;
+body.dark-mode button:hover {
+  background-color: #e6c200;
+  color: #3a2166;
+  box-shadow: 0 0 15px #e6c200;
 }

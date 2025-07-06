@@ -1,46 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Programming Languages Tasks</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>CodeLearn | Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0 1rem;
+    }
+
+    header {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+      padding: 1rem;
+    }
+
+    .card {
+      background: #f2f2f2;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card a {
+      display: inline-block;
+      margin: 0.3rem;
+      padding: 0.4rem 0.8rem;
+      background-color: #444;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    .card a:hover {
+      background-color: #000;
+    }
+
+    .dark-mode .card {
+      background: #222;
+      color: white;
+    }
+
+    #login-box {
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    #login-box input {
+      padding: 0.4rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-right: 0.5rem;
+    }
+
+    #login-box button {
+      padding: 0.4rem 0.8rem;
+      background-color: #444;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #login-box button:hover {
+      background-color: #000;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Dark mode toggle button -->
+  <!-- Dark Mode Toggle -->
   <button id="toggle-dark" style="position: fixed; top: 1rem; right: 1rem;">🌙 Toggle Dark Mode</button>
 
   <!-- Header -->
-  <h1>Programming Languages Tasks</h1>
+  <header>
+    <h1>👨‍💻 Welcome to CodeLearn</h1>
+    <p>Your one-stop practice platform for coding tasks!</p>
+  </header>
 
-  <!-- Navigation bar -->
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="python.html">Python</a>
-    <a href="cpp.html">C++</a>
-    <a href="java.html">Java</a>
-  </nav>
-
-  <!-- Sample task cards -->
-  <div class="task">
-    <div class="task-title">Task 1: Hello World</div>
-    <p>Write a program to print "Hello, World!"</p>
-    <a class="submit-btn" href="#">Submit</a>
+  <!-- Login Box -->
+  <div id="login-box">
+    <input type="text" id="nameInput" placeholder="Enter your name">
+    <button onclick="loginStudent()">Login</button>
   </div>
 
-  <div class="task">
-    <div class="task-title">Task 2: Variables</div>
-    <p>Write a program to declare and use variables.</p>
-    <a class="submit-btn" href="#">Submit</a>
+  <!-- Language Grid -->
+  <div class="grid">
+    <div class="card">
+      <h2>Python</h2>
+      <a href="python.html">Beginner</a>
+      <a href="python_intermediate.html">Intermediate</a>
+    </div>
+    <div class="card">
+      <h2>C++</h2>
+      <a href="cpp.html">Beginner</a>
+      <a href="cpp_intermediate.html">Intermediate</a>
+    </div>
+    <div class="card">
+      <h2>Java</h2>
+      <a href="java.html">Beginner</a>
+      <a href="java_intermediate.html">Intermediate</a>
+    </div>
   </div>
 
-  <!-- JavaScript for Dark Mode toggle -->
+  <!-- Scripts -->
   <script>
-    const toggle = document.getElementById('toggle-dark');
-    toggle.addEventListener('click', () => {
+    // Dark Mode Toggle
+    document.getElementById('toggle-dark').addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
     });
-  </script>
-</body>
-</html>
+
+    // Login System
+    function loginStudent() {
+      const name = document.getElementById("nameInput").value.trim();
+      if (!name) {
+        alert("Please enter your name!");
+        return;
+      }
+
+      localStorage.setItem("studentName", name);
+      alert("Welcome, " + name + "!");
+      document.getElementById("login-box").innerHTML = `<p>👋 Welcome, <strong>${name}</strong>!</p>`;
+    }
+
+    //

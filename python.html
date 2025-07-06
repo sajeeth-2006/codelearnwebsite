@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Python Intermediate Tasks</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <button id="toggle-dark" style="position: fixed; top: 1rem; right: 1rem;">🌙 Toggle Dark Mode</button>
 
-  <h1>Python Intermediate Tasks</h1>
+  <h1>Python Intermediate & Advanced Tasks</h1>
 
   <nav>
     <a href="index.html">Home</a>
@@ -18,7 +17,7 @@
     <a href="python_intermediate.html">Python (Intermediate)</a>
   </nav>
 
-  <!-- Tasks -->
+  <!-- Existing Intermediate Tasks -->
   <div class="task">
     <div class="task-title">Task 1: Palindrome Checker</div>
     <p>Write a function that checks if a given string is a palindrome.</p>
@@ -49,34 +48,80 @@
     <button class="submit-btn" onclick="openForm('Task 5: Fibonacci with Recursion')">Submit</button>
   </div>
 
+  <!-- New Advanced Tasks -->
+  <hr />
+  <h2>Advanced Tasks</h2>
+
+  <div class="task">
+    <div class="task-title">Task 6: Lambda Function Usage</div>
+    <p>Use lambda functions to sort a list of tuples by the second element.</p>
+    <button class="submit-btn" onclick="openForm('Task 6: Lambda Function Usage')">Submit</button>
+  </div>
+
+  <div class="task">
+    <div class="task-title">Task 7: List Comprehensions</div>
+    <p>Create a list of squares of even numbers from 1 to 20 using list comprehensions.</p>
+    <button class="submit-btn" onclick="openForm('Task 7: List Comprehensions')">Submit</button>
+  </div>
+
+  <div class="task">
+    <div class="task-title">Task 8: Object-Oriented Programming</div>
+    <p>Create a class 'Car' with attributes and methods, then create objects of this class.</p>
+    <button class="submit-btn" onclick="openForm('Task 8: Object-Oriented Programming')">Submit</button>
+  </div>
+
+  <div class="task">
+    <div class="task-title">Task 9: Using Modules</div>
+    <p>Write a program that imports the math module and uses some functions like sqrt and factorial.</p>
+    <button class="submit-btn" onclick="openForm('Task 9: Using Modules')">Submit</button>
+  </div>
+
+  <div class="task">
+    <div class="task-title">Task 10: Exception Handling</div>
+    <p>Handle exceptions for division by zero and invalid input.</p>
+    <button class="submit-btn" onclick="openForm('Task 10: Exception Handling')">Submit</button>
+  </div>
+
   <!-- Submit Form -->
-  <div id="submit-form" style="display: none; padding: 1rem; background: #eee; border-radius: 8px; margin-top: 1rem;">
+  <div
+    id="submit-form"
+    style="display: none; padding: 1rem; background: #eee; border-radius: 8px; margin-top: 1rem;"
+  >
     <h3>Submit Your Answer</h3>
-    <label>Name:<br><input type="text" id="student-name" placeholder="Your name" /></label><br><br>
-    <label>Paste Code:<br><textarea id="student-code" rows="6" cols="50" placeholder="Your code here..."></textarea></label><br><br>
+    <label
+      >Name:<br /><input type="text" id="student-name" placeholder="Your name" /></label
+    ><br /><br />
+    <label
+      >Paste Code:<br /><textarea
+        id="student-code"
+        rows="6"
+        cols="50"
+        placeholder="Your code here..."
+      ></textarea
+    ></label
+    ><br /><br />
     <button onclick="submitTask()">Submit</button>
     <button onclick="closeForm()">Cancel</button>
   </div>
 
-  <!-- JavaScript -->
   <script>
-    const toggle = document.getElementById('toggle-dark');
-    toggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
+    const toggle = document.getElementById("toggle-dark");
+    toggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
     });
 
     function openForm(taskTitle) {
-      document.getElementById('submit-form').style.display = 'block';
-      document.getElementById('submit-form').scrollIntoView({ behavior: 'smooth' });
+      document.getElementById("submit-form").style.display = "block";
+      document.getElementById("submit-form").scrollIntoView({ behavior: "smooth" });
     }
 
     function closeForm() {
-      document.getElementById('submit-form').style.display = 'none';
+      document.getElementById("submit-form").style.display = "none";
     }
 
     function submitTask() {
-      const name = document.getElementById('student-name').value.trim();
-      const code = document.getElementById('student-code').value.trim();
+      const name = document.getElementById("student-name").value.trim();
+      const code = document.getElementById("student-code").value.trim();
 
       if (!name || !code) {
         alert("Please fill in both name and code.");
@@ -85,11 +130,10 @@
 
       alert(`Thank you, ${name}! Your answer was submitted.`);
 
-      document.getElementById('submit-form').style.display = 'none';
-      document.getElementById('student-name').value = '';
-      document.getElementById('student-code').value = '';
+      document.getElementById("submit-form").style.display = "none";
+      document.getElementById("student-name").value = "";
+      document.getElementById("student-code").value = "";
     }
   </script>
-
 </body>
 </html>

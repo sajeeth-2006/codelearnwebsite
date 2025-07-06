@@ -2,30 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Learn HTML/CSS - Code Learn</title>
+  <title>Python Intermediate Tasks</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>HTML/CSS - Tasks</h1>
+  <button id="toggle-dark" style="position: fixed; top: 1rem; right: 1rem;">🌙 Toggle Dark Mode</button>
+  <h1>Python Intermediate Tasks</h1>
 
-  <div class="task">
-    <div class="task-title">Task 1: Simple Webpage</div>
-    <p>Create a basic HTML page with a heading and a paragraph.</p>
-    <a class="submit-btn" href="submit.html?task=html1">Submit Solution</a>
-  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="python.html">Python (Beginner)</a>
+    <a href="python_intermediate.html">Python (Intermediate)</a>
+  </nav>
 
-  <div class="task">
-    <div class="task-title">Task 2: Add a Button</div>
-    <p>Create a webpage with a styled button using CSS.</p>
-    <a class="submit-btn" href="submit.html?task=html2">Submit Solution</a>
-  </div>
+  <div class="task"><div class="task-title">Task 1: Palindrome Checker</div><p>Write a function that checks if a given string is a palindrome (same forward and backward).</p><a class="submit-btn" href="#">Submit</a></div>
+  <div class="task"><div class="task-title">Task 2: File Word Count</div><p>Read a text file and count the number of words in it.</p><a class="submit-btn" href="#">Submit</a></div>
+  <div class="task"><div class="task-title">Task 3: Multiplication Table (Function)</div><p>Create a function that prints the multiplication table for a given number up to 10.</p><a class="submit-btn" href="#">Submit</a></div>
+  <div class="task"><div class="task-title">Task 4: Dictionary Sorting</div><p>Sort a dictionary by its values in ascending order.</p><a class="submit-btn" href="#">Submit</a></div>
+  <div class="task"><div class="task-title">Task 5: Fibonacci with Recursion</div><p>Write a recursive function to print the Fibonacci series up to n terms.</p><a class="submit-btn" href="#">Submit</a></div>
 
-  <div class="task">
-    <div class="task-title">Task 3: Form Design</div>
-    <p>Design a contact form using HTML and CSS (with Name, Email, Message fields).</p>
-    <a class="submit-btn" href="submit.html?task=html3">Submit Solution</a>
-  </div>
+  <script>
+    const toggle = document.getElementById('toggle-dark');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
 
 </body>
 </html>
+

@@ -1,83 +1,78 @@
-/* style.css - Updated for Modern Design */
-
+/* Base styles */
 body {
-  font-family: 'Segoe UI', Tahoma, sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
-  margin: 0;
-  padding: 0;
-}
-
-h1 {
-  text-align: center;
-  color: #3b3b98;
-  padding: 1rem;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #222;
+  margin: 2rem;
 }
 
 nav {
-  background-color: #3b3b98;
-  padding: 1rem;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  margin-bottom: 1rem;
 }
 
 nav a {
-  color: #fff;
+  margin-right: 1rem;
   text-decoration: none;
-  margin: 0.5rem 1rem;
+  color: #0366d6;
   font-weight: bold;
-  transition: color 0.3s ease;
 }
 
 nav a:hover {
-  color: #ffd32a;
+  text-decoration: underline;
 }
 
 .task {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  margin: 1rem auto;
-  padding: 1.5rem;
-  max-width: 700px;
-  transition: transform 0.2s ease;
-}
-
-.task:hover {
-  transform: scale(1.02);
+  background: white;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
 
 .task-title {
-  font-size: 1.3rem;
-  color: #2f3640;
+  font-size: 1.2rem;
+  font-weight: 600;
   margin-bottom: 0.5rem;
-  font-weight: bold;
 }
 
 .submit-btn {
   display: inline-block;
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  background-color: #3b3b98;
+  background-color: #0366d6;
   color: white;
-  border-radius: 5px;
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
   text-decoration: none;
-  transition: background-color 0.3s ease;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .submit-btn:hover {
+  background-color: #024f9b;
+}
+
+/* Dark mode styles */
+.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.dark-mode nav a {
+  color: #9ecfff;
+}
+
+.dark-mode nav a:hover {
+  text-decoration: underline;
+}
+
+.dark-mode .task {
+  background-color: #1c1c1c;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .submit-btn {
   background-color: #575fcf;
 }
 
-@media screen and (max-width: 600px) {
-  .task {
-    margin: 1rem;
-    padding: 1rem;
-  }
-
-  nav {
-    flex-direction: column;
-    align-items: center;
-  }
+.dark-mode .submit-btn:hover {
+  background-color: #403ecc;
 }

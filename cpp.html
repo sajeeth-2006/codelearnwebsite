@@ -2,59 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Learn C++ - Code Learn</title>
-  <style>
-    body {
-      font-family: serif;
-      background-color: #fdf6e3;
-      padding: 20px;
-      color: #333;
-    }
-    h1, h2 {
-      color: #4b3f72;
-    }
-    .task {
-      border: 1px solid #ccc;
-      padding: 15px;
-      margin-bottom: 15px;
-      background: #fff;
-    }
-    .task-title {
-      font-weight: bold;
-      font-size: 1.2em;
-    }
-    .submit-btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 5px 10px;
-      background: #4b3f72;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-  </style>
+  <title>C++ Intermediate Tasks</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>C++ Programming - Tasks</h1>
+  <button id="toggle-dark" style="position: fixed; top: 1rem; right: 1rem;">🌙 Toggle Dark Mode</button>
+  <h1>C++ Intermediate Tasks</h1>
 
-  <div class="task">
-    <div class="task-title">Task 1: Print Hello</div>
-    <p>Write a C++ program to print "Hello, World!"</p>
-    <a class="submit-btn" href="submit.html?task=cpp1">Submit Solution</a>
-  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="cpp.html">C++ (Beginner)</a>
+    <a href="cpp_intermediate.html">C++ (Intermediate)</a>
+  </nav>
 
-  <div class="task">
-    <div class="task-title">Task 2: Add Two Numbers</div>
-    <p>Write a program to input two integers and display their sum.</p>
-    <a class="submit-btn" href="submit.html?task=cpp2">Submit Solution</a>
-  </div>
+  <div class="task"><div class="task-title">Task 1: Prime Range</div><p>Print all prime numbers between two given numbers.</p><a class="submit-btn" href="#">Submit</a></div>
+  <div class="task"><div class="task-title">Task 2: Armstrong Number</div><p>Check if a number is an Armstrong number (e.g., 153).</p><a class="submit-btn" href="#">Submit</a></div>
+  <div class="task"><div class="task-title">Task 3: Class and Object</div><p>Create a simple class with 2 attributes and a method to display them.</p><a class="submit-btn" href="#">Submit</a></div>
+  <div class="task"><div class="task-title">Task 4: Sum of Digits</div><p>Calculate the sum of digits of a number using a loop.</p><a class="submit-btn" href="#">Submit</a></div>
+  <div class="task"><div class="task-title">Task 5: Factorial using Recursion</div><p>Write a recursive function to calculate factorial of a number.</p><a class="submit-btn" href="#">Submit</a></div>
 
-  <div class="task">
-    <div class="task-title">Task 3: Prime Number Checker</div>
-    <p>Write a C++ program to check if a number is prime.</p>
-    <a class="submit-btn" href="submit.html?task=cpp3">Submit Solution</a>
-  </div>
+  <script>
+    const toggle = document.getElementById('toggle-dark');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
 
 </body>
 </html>

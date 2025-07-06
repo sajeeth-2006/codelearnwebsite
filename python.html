@@ -2,59 +2,97 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Learn Python - Code Learn</title>
-  <style>
-    body {
-      font-family: serif;
-      background-color: #fdf6e3;
-      padding: 20px;
-      color: #333;
-    }
-    h1, h2 {
-      color: #4b3f72;
-    }
-    .task {
-      border: 1px solid #ccc;
-      padding: 15px;
-      margin-bottom: 15px;
-      background: #fff;
-    }
-    .task-title {
-      font-weight: bold;
-      font-size: 1.2em;
-    }
-    .submit-btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 5px 10px;
-      background: #4b3f72;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-  </style>
+  <title>Python Tasks</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>Python Programming - Tasks</h1>
+  <!-- Dark Mode Toggle -->
+  <button id="toggle-dark" style="position: fixed; top: 1rem; right: 1rem;">🌙 Toggle Dark Mode</button>
 
+  <h1>Python Programming Tasks</h1>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="python.html">Python</a>
+    <a href="python_intermediate.html">Python (Intermediate)</a>
+  </nav>
+
+  <!-- Tasks List -->
   <div class="task">
-    <div class="task-title">Task 1: Print Hello World</div>
+    <div class="task-title">Task 1: Hello World</div>
     <p>Write a Python program to print "Hello, World!"</p>
-    <a class="submit-btn" href="submit.html?task=python1">Submit Solution</a>
+    <button class="submit-btn" onclick="openForm('Task 1: Hello World')">Submit</button>
   </div>
 
   <div class="task">
     <div class="task-title">Task 2: Add Two Numbers</div>
-    <p>Write a Python program to input two numbers and print their sum.</p>
-    <a class="submit-btn" href="submit.html?task=python2">Submit Solution</a>
+    <p>Take two numbers from the user and print their sum.</p>
+    <button class="submit-btn" onclick="openForm('Task 2: Add Two Numbers')">Submit</button>
   </div>
 
   <div class="task">
     <div class="task-title">Task 3: Even or Odd</div>
-    <p>Write a Python program to check if a number is even or odd.</p>
-    <a class="submit-btn" href="submit.html?task=python3">Submit Solution</a>
+    <p>Check if a number is even or odd.</p>
+    <button class="submit-btn" onclick="openForm('Task 3: Even or Odd')">Submit</button>
   </div>
+
+  <div class="task">
+    <div class="task-title">Task 4: Factorial</div>
+    <p>Calculate the factorial of a given number.</p>
+    <button class="submit-btn" onclick="openForm('Task 4: Factorial')">Submit</button>
+  </div>
+
+  <div class="task">
+    <div class="task-title">Task 5: Prime Number</div>
+    <p>Check if a number is prime or not.</p>
+    <button class="submit-btn" onclick="openForm('Task 5: Prime Number')">Submit</button>
+  </div>
+
+  <!-- Submit Form -->
+  <div id="submit-form" style="display: none; padding: 1rem; background: #eee; border-radius: 8px; margin-top: 1rem;">
+    <h3>Submit Your Answer</h3>
+    <label>Name:<br><input type="text" id="student-name" placeholder="Your name" /></label><br><br>
+    <label>Paste Code:<br><textarea id="student-code" rows="6" cols="50" placeholder="Your code here..."></textarea></label><br><br>
+    <button onclick="submitTask()">Submit</button>
+    <button onclick="closeForm()">Cancel</button>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    const toggle = document.getElementById('toggle-dark');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+
+    function openForm(taskTitle) {
+      document.getElementById('submit-form').style.display = 'block';
+      document.getElementById('submit-form').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function closeForm() {
+      document.getElementById('submit-form').style.display = 'none';
+    }
+
+    function submitTask() {
+      const name = document.getElementById('student-name').value.trim();
+      const code = document.getElementById('student-code').value.trim();
+
+      if (!name || !code) {
+        alert("Please fill in both name and code.");
+        return;
+      }
+
+      alert(`Thank you, ${name}! Your answer was submitted.`);
+
+      // Reset and hide form
+      document.getElementById('submit-form').style.display = 'none';
+      document.getElementById('student-name').value = '';
+      document.getElementById('student-code').value = '';
+    }
+  </script>
 
 </body>
 </html>
